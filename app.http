@@ -1,0 +1,90 @@
+###GET USER
+GET http://localhost:1300/user
+
+###POST-REGISTER
+POST http://localhost:1300/user
+Content-Type: application/json
+
+{
+  "username":"amada",
+  "password" :"1954"
+}
+
+###POST-LOGIN
+POST http://localhost:1300/auth/login
+Content-Type: application/json
+
+{
+  "username":"Rigoberto",
+  "password" :"1992"
+}
+
+###DELETE-USER
+DELETE http://localhost:1300/user/66ba3b6f2ed47d3731a2185d
+
+
+###PUT-USER
+POST http://localhost:1300/user/66b4e7016a44cd739b69e472
+Content-Type: application/json
+
+{
+  "username":"Rigoberto",
+  "password" :"1992"
+}
+//PRODUCTOS
+
+###GET PRODUCTS
+GET http://localhost:1300/products
+
+###POST-REGISTER PRODUCTS
+POST http://localhost:1300/products
+Content-Type: application/json
+
+{
+  "name":"Motos",
+  "description":"Mejores autos para viajar en carretera",
+  "price":5000,
+  "stock":10,
+  "images":"https://acnews.blob.core.windows.net/imgnews/paragraph/NPAZ_327285a8c9f040518df073a860f5790c.webp"
+}
+
+###POST-CART
+POST http://localhost:1300/cart/add
+Content-Type: application/json
+
+{
+  "productId": "66ba9afbab51f733c73b4f16",
+  "quantity": 1
+}
+###POST-CART
+POST http://localhost:1300/cart/add
+Content-Type: application/json
+
+{
+  "productId": "66bb78460bc925ae7c2e6473",
+  "quantity": 1
+}
+
+###GET CART
+GET http://localhost:1300/cart/view
+
+###DELETE PRODUCT IN CART
+DELETE http://localhost:1300/cart/delete/66bb78460bc925ae7c2e6473
+
+###PATCH-CART
+POST http://localhost:1300/cart/update/66bb78460bc925ae7c2e6473
+Content-Type: application/json
+
+{
+  
+  "quantity": 2
+}
+
+###AUMENTAR STOCK
+PATCH  http://localhost:1300/products/stock/
+Content-Type:  application/json
+
+{
+  "_id":"66bb78460bc925ae7c2e6473",
+  "stock" : 10
+}
