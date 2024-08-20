@@ -70,7 +70,7 @@ export class UserController {
         res.clearCookie('authToken', {
           httpOnly: true, // Asegúrate de que coincide con la configuración de la cookie cuando se estableció
           secure: process.env.NODE_ENV === 'production', // Coincide con la configuración de la cookie cuando se estableció
-          sameSite: 'Strict' // Coincide con la configuración de la cookie cuando se estableció
+          sameSite: 'None' // Coincide con la configuración de la cookie cuando se estableció
         });
         res.sendStatus(200)
       }
