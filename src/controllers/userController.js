@@ -57,7 +57,7 @@ export class UserController {
           res.cookie('authToken',  token, {
             httpOnly: true, // La cookie no puede ser accedida desde JavaScript en el navegador
             secure: process.env.NODE_ENV === 'production', // Solo envía la cookie a través de HTTPS en producción
-            sameSite: 'Strict', // Permite que la cookie sea enviada con solicitudes entre sitios
+            sameSite: 'None', // Permite que la cookie sea enviada con solicitudes entre sitios
             maxAge: 3600000 // La cookie expirará en 1 hora (en milisegundos)
           });
           res.status(200).json({ user: resp });
