@@ -1,10 +1,9 @@
 import cors from 'cors'
-
+import { FRONTEND_URL } from '../env/env.js';
 // ACCEPTED_ORIGINS es un array que contiene los orígenes permitidos para las solicitudes CORS.
 const ACCEPTED_ORIGINS = [
   'http://localhost:8080',
-  'http://localhost:5173',
-  
+   FRONTEND_URL  
 ];
 
 // Exportamos la función costMiddleware
